@@ -10,8 +10,8 @@ Download ICEBridge.zip and install as a normal Blender plugin. Instructions can 
 
 1. Create or import BIM- or CAD-data to Blender. 
 2. Make sure that the data is valid.
-  a. Zones and building bodies must be made up of closed volumes constructed out of planar surfaces. Each mesh will create a separate zone or building body.
-  b. Windows and doors works best if they are planar. Each mesh will create a separate window or door.
+  *. Zones and building bodies must be made up of closed volumes constructed out of planar surfaces. Each mesh will create a separate zone or building body.
+  *. Windows and doors works best if they are planar. Each mesh will create a separate window or door.
 3. Select objects of one type with similar properties, for example zones. Supported objects are building bodies, zones, windows, doors and external (shading) objects.
 4. Select the corresponding object type in ICEBridge, path and press "Export to IDA ICE". This will generate a script file and geometry files in the selected folder path. Exporting the same object type twice will overwrite the script file and geometries with the same name.
 5. Open IDA ICE and run the generated script. The scripts can be run in any order but windows and doors need to have building bodies to be placed on.
