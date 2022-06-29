@@ -6,6 +6,8 @@ Blender plugin to send BIM data to IDA ICE
 
 Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found here https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
 
+!https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.png
+
 ## Usage
 
 1. Create or import BIM- or CAD-data to Blender. 
