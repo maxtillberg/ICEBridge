@@ -6,7 +6,7 @@ Blender plugin to send BIM data to IDA ICE
 
 Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found here https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
 
-##Usage
+## Usage
 
 1. Create or import BIM- or CAD-data to Blender. 
 2. Make sure that the data is valid.
@@ -16,7 +16,7 @@ Download ICEBridge.zip and install as a normal Blender plugin. Instructions can 
 4. Select the corresponding object type in ICEBridge, path and press "Export to IDA ICE". This will generate a script file and geometry files in the selected folder path. Exporting the same object type twice will overwrite the script file and geometries with the same name.
 5. Open IDA ICE and run the generated script. The scripts can be run in any order but windows and doors need to have building bodies to be placed on.
 
-##Limitations
+## Limitations
 
 This is a proof of concept, not an official product by Equa. There will be bugs and limitations.
 - Windows and doors must be rectangular.
@@ -24,11 +24,11 @@ This is a proof of concept, not an official product by Equa. There will be bugs 
 - Sloped roof windows can be created smaller than the original windows. This is a bug.
 - Windows and doors must not overlap building bodies. If they are larger, you need to divide them or merge the building bodies.
 
-##Input
+## Input
 
 ICEBridge works well with BlenderBIM and Speckle but any valid geometry will work.
 
-##Notes
+## Notes
 
 - Windows and doors import best if the center of origin is the to center of mass (surface)
 - Windows and doors import best if the rotation is not transformed.
