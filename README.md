@@ -20,6 +20,7 @@ This is a proof of concept, not an official product by Equa. There will be bugs 
 - Sloped roof windows can be created smaller then the original windows.
 
 Input
+
 ICEBridge works well with BlenderBIM and Speckle but any valid geoemtry will work.
 
 Notes
