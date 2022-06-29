@@ -14,7 +14,7 @@ Usage
   b. Windows and doors works best if they are planar. Each mesh will create a separate window or door.
 3. Select objects of one type with similar properties, for example zones. Supported objects are building bodies, zones, windows, doors and external (shading) objects.
 4. Select the corresponding opject type in ICEBridge, path and press "Export to IDA ICE". This will generate a script file and geoemtry files in the selected folder path. Exporting the same object type twice will overwrite the script file and geoetries with the same name.
-5. Open IDA ICE and run the generated script. The scripts can be run in any order but windows and doors needs to have building bodies to be placed oon.
+5. Open IDA ICE and run the generated script. The scripts can be run in any order but windows and doors needs to have building bodies to be placed on.
 
 Limitations
 
