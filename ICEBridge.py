@@ -4,6 +4,16 @@ Max Tillberg - August 2022
 Email: max.tillberg@equa.se
 --------
 Copyright (c) 2022 Equa Simulation AB
+
+Bugs:
+    - External objects are not visible if not placed in ARCDATA and objects can only e imported oce with script
+    - Zone and building bodies tend to be placed on top of each other origo
+    - Problems with with and normal direction of windows and doors
+    
+Tod do:
+    - Give windows and doors names if available
+    - Get data from IFC-files
+    
 """
 
 bl_info = {
@@ -22,14 +32,12 @@ import os
 import mathutils
 import math
 
-
 #Function to determine largest object
 def maximum(a, b):
     if a >= b:
         return a
     else:
         return b
-
 
 # == GLOBAL VARIABLES
 object_types = [
@@ -62,7 +70,7 @@ PROPS = [
 
 # == UTILS
 def export_object(params):
-    print (params)
+    #print (params)
     if params[0] == "0": #Building bodies
         ICEScript=open(str(params[1]) + 'ImportBuildingBodies.txt','w')
         view_layer = bpy.context.view_layer
@@ -72,12 +80,21 @@ def export_object(params):
 
         for obj in selection:
             obj.select_set(True)
-
-            # some exporters only use the active object
+            #Get Speckle category, type and family
+            #Check if a name exists. We should also check if name is valid and unique
+            custompropertyexists = bpy.data.objects[str(obj.name)].get('name') is not None
+            if custompropertyexists == True:
+                fn = (str(bpy.data.objects[str(obj.name)]['name']))
+            elif custompropertyexists == False:
+                fn = str(obj.name)
+                
+            fn = fn.replace('/', '_') #IFC-names can be invalid file names
+            fn = (str(params[1]) + str(fn)) #Get path
+            fp = fn  + '.obj'
+           # some exporters only use the active object
             view_layer.objects.active = obj
-            fn = (str(params[1]) + str(obj.name) +'.obj')
-            bpy.ops.export_scene.obj(filepath=fn, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
-            ICEScript.write('(:call Import-Geometry (:call ice-3d-pane [@] t t)' +" '" + 'building-body ' + '(0 0 0)' + ' 0 "' + fn + '")' +'\n')
+            bpy.ops.export_scene.obj(filepath=fp, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
+            ICEScript.write('(:call Import-Geometry (:call ice-3d-pane [@] t t)' +" '" + 'building-body ' + '(0 0 0)' + ' 0 "' + fp + '")' +'\n')
             obj.select_set(False)
 
         ICEScript.close()
@@ -108,12 +125,21 @@ def export_object(params):
 
         for obj in selection:
             obj.select_set(True)
-
-            # some exporters only use the active object
+            #Get Speckle category, type and family
+            #Check if a name exists. We should also check if name is valid and unique
+            custompropertyexists = bpy.data.objects[str(obj.name)].get('name') is not None
+            if custompropertyexists == True:
+                fn = (str(bpy.data.objects[str(obj.name)]['name']))
+            elif custompropertyexists == False:
+                fn = str(obj.name)
+                
+            fnorg = fn.replace('/', '_') #IFC-names can be invalid file names
+            fn = (str(params[1]) + str(fnorg)) #Get path
+            fp = fn  + '.obj'
+           # some exporters only use the active object
             view_layer.objects.active = obj
-            fn = (str(params[1]) + str(obj.name) +'.obj')
-            bpy.ops.export_scene.obj(filepath=fn, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
-            ICEScript.write('(:call Import-Geometry (:call ice-3d-pane [@] t t)' +" '" + 'zone ' + '(0 0 0)' + ' 0 "' + fn + '")' +'\n' + '(:UPDATE [@](:REMOVE "' + str(obj.name) + '-s"))'+'\n')
+            bpy.ops.export_scene.obj(filepath=fp, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
+            ICEScript.write('(:call Import-Geometry (:call ice-3d-pane [@] t t)' +" '" + 'zone ' + '(0 0 0)' + ' 0 "' + fp + '")' +'\n' + '(:UPDATE [@](:REMOVE "' + str(fnorg) + '-s"))'+'\n')
             obj.select_set(False)
 
         ICEScript.close()
@@ -146,12 +172,21 @@ def export_object(params):
         
         for obj in selection:
             obj.select_set(True)
-
-            # some exporters only use the active object
+            #Get Speckle category, type and family
+            #Check if a name exists. We should also check if name is valid and unique
+            custompropertyexists = bpy.data.objects[str(obj.name)].get('name') is not None
+            if custompropertyexists == True:
+                fn = (str(bpy.data.objects[str(obj.name)]['name']))
+            elif custompropertyexists == False:
+                fn = str(obj.name)
+                
+            fn = fn.replace('/', '_') #IFC-names can be invalid file names
+            fn = (str(params[1]) + str(fn)) #Get path
+            fp = fn  + '.obj'
+           # some exporters only use the active object
             view_layer.objects.active = obj
-            fn = (str(params[1]) + str(obj.name) +'.obj')
-            bpy.ops.export_scene.obj(filepath=fn, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
-            ICEScript.write('(:call Import-Geometry (:call ice-3d-pane [@] t t)' +" '" + 'zone ' + '(0 0 0)' + ' 0 "' + fn + '")' +'\n')
+            bpy.ops.export_scene.obj(filepath=fp, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
+            ICEScript.write('(:call Import-Geometry (:call ice-3d-pane [@] t t)' +" '" + 'zone ' + '(0 0 0)' + ' 0 "' + fp + '")' +'\n')
             obj.select_set(False)
 
         ICEScript.close()
@@ -204,6 +239,15 @@ def export_object(params):
             #ny = (normal.x * math.sin(math.radians(90))) + (normal.y * math.cos(math.radians(90)))
             calculatedheight = max(v.co.z for v in verts) - min(v.co.z for v in verts)
             height = (maximum(dimensionheight, calculatedheight))
+            
+             #Get Speckle category, type and family
+            #Check if a name exists. We should also check if name is valid and unique
+            custompropertyexists = bpy.data.objects[str(ob.name)].get('type') is not None
+            if custompropertyexists == True:
+                panetype = (str(bpy.data.objects[str(ob.name)]['type']))
+            elif custompropertyexists == False:
+                panetype = "Undefined"
+            
             #Produce script
             if appwidth > 0.2: #Do not export very small windows and doors to avoid errors
                 ICEScript.write("((")
@@ -233,7 +277,7 @@ def export_object(params):
                 ICEScript.write(str(appwidth))
                 ICEScript.write(") (:PAR :N STYLE :V ")
                 ICEScript.write('"')
-                ICEScript.write("Window type") #This should be replaced if possible
+                ICEScript.write(panetype)
                 ICEScript.write('"))'+ '\n')
         ICEScript.close()
 
@@ -262,20 +306,27 @@ def export_object(params):
         selection = bpy.context.selected_objects
         bpy.ops.object.select_all(action='DESELECT')
         ICEScript.write('(:UPDATE [@]' +'\n')
-        #ICEScript.write('  (:ADD (AGGREGATE :N ' + 'ARCDATA' + ')' +'\n')
+        ICEScript.write('(:ADD (AGGREGATE :N ARCDATA)' + '\n')
             
         for obj in selection:
             obj.select_set(True)
+            #Get Speckle category, type and family
+            #Check if a name exists. We should also check if name is valid and unique
+            custompropertyexists = bpy.data.objects[str(obj.name)].get('name') is not None
+            if custompropertyexists == True:
+                fn = (str(bpy.data.objects[str(obj.name)]['name']))
+            elif custompropertyexists == False:
+                fn = str(obj.name)
+                
+            fn = fn.replace('/', '_') #IFC-names can be invalid file names
+            fnorg = fn
+            fn = (str(params[1]) + str(fn)) #Get path
+            fp = fn  + '.obj'
+            print (fnorg)
+            bpy.ops.export_scene.obj(filepath=fp, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
+            ICEScript.write('((AGGREGATE :N "' + fnorg + '" :T PICT3D)(:PAR :N FILE :V "' + fp + '")(:PAR :N TRANSPARENCY :V ' + str(params[2]) + ')(:PAR :N SHADOWING :V :' + str(params[3]) + '))' +'\n')
 
-            # some exporters only use the active object
-            view_layer.objects.active = obj
-            fn = (str(params[1]) + str(obj.name) + '.obj')
-
-            bpy.ops.export_scene.obj(filepath=fn, axis_forward='-Y', axis_up='Z', use_selection=True, check_existing=True)
-            ICEScript.write('(:Add (AGGREGATE :N "' + obj.name + '" :T PICT3D)(:PAR :N FILE :V "' + fn + '")(:PAR :N TRANSPARENCY :V ' + str(params[2]) + ')(:PAR :N SHADOWING :V :' + str(params[3]) + '))' +'\n')
-            obj.select_set(False)
-
-        ICEScript.write(')')
+        ICEScript.write('))')
         ICEScript.close()
             
         view_layer.objects.active = obj_active
