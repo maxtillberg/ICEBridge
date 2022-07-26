@@ -3,7 +3,7 @@
 Blender plugin to send BIM data to IDA ICE
 
 ## Requirements
-To run this plugin you need Blender (https://www.blender.org/). To get BIM-data into Blender I recommend BlenderBIM (https://blenderbim.org/) and Speckle (https://speckle.systems/). It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need IDA ICE (https://www.equa.se/en/ida-ice).
+To run this plugin you need Blender (https://www.blender.org/) and BlenderBIM (https://blenderbim.org/). I recomend to install and Speckle (https://speckle.systems/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need IDA ICE (https://www.equa.se/en/ida-ice).
 
 ## Installation
 Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found here https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
@@ -12,7 +12,7 @@ Download ICEBridge.zip and install as a normal Blender plugin. Instructions can 
 
 ## Usage
 
-1. Create or import BIM- or CAD-data to Blender. 
+1. Create or import BIM- or CAD-data to Blender using BlenderBIM, Speckle or CAD data as OBJ or DXF. 
 2. Make sure that the data is valid. Zones and building bodies must be made up of closed volumes constructed out of planar surfaces. Each mesh will create a separate zone or building body. Windows and doors works best if they are planar. Each mesh will create a separate window or door.
 3. Select objects of one type with similar properties, for example zones. Supported objects are building bodies, zones, windows, doors and external (shading) objects.
 4. Select the corresponding object type in ICEBridge, path and press "Export to IDA ICE". This will generate a script file and geometry files in the selected folder path. Exporting the same object type twice will overwrite the script file and geometries with the same name.
