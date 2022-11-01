@@ -29,6 +29,12 @@ This is a proof of concept, not an official product by Equa. There will be bugs 
 
 ICEBridge works well with BlenderBIM and Speckle but any valid geometry will work.
 
+## News
+
+- 2022-11-01: Version 0.8.6 External shading objects can be imported without manual renaming.
+- 2022-10-31: Version 0.8.5 New window export function that uses temp zones and a custom script. This method deletes all exsisting zones and may create stray windows in corners depending on the bounding box of the window. The method ignores BIM-data.
+
+
 ## Notes
 
 - Windows and doors should have center of origin is the to center of mass (surface)
