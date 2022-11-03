@@ -31,6 +31,7 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 ## News
 
+- 2022-11-31: Version 0.8.7 Possible to run scripts directly from Blender. This is only possible for scripts that creates OBJ-files.
 - 2022-11-01: Version 0.8.6 External shading objects can be imported without manual renaming.
 - 2022-10-31: Version 0.8.5 New window export function that uses temp zones and a custom script. This method deletes all exsisting zones and may create stray windows in corners depending on the bounding box of the window. The method ignores BIM-data.
 
