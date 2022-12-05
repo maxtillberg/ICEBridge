@@ -3,10 +3,10 @@
 Blender plugin to send BIM data to IDA ICE
 
 ## Requirements
-To run this plugin you need Blender (https://www.blender.org/) and BlenderBIM (https://blenderbim.org/). I recomend to install and Speckle (https://speckle.systems/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need IDA ICE (https://www.equa.se/en/ida-ice).
+To run this plugin you need Blender (https://www.blender.org/) and BlenderBIM (https://blenderbim.org/). I recommend installing and Speckle (https://speckle.systems/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need IDA ICE (https://www.equa.se/en/ida-ice).
 
 ## Installation
-Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found here https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
+Download ICEBridge.zip and install it as a normal Blender plugin. Instructions can be found here https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
 
 ![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.png)
 
@@ -14,8 +14,8 @@ Download ICEBridge.zip and install as a normal Blender plugin. Instructions can 
 
 1. Create or import BIM- or CAD-data to Blender using BlenderBIM, Speckle, DOTBIM or CAD data as OBJ or DXF. 
 2. Make sure that the data is valid. Zones and building bodies must be made up of closed volumes constructed out of planar surfaces or planar surfaces that can be extruded into volumes. Each mesh will create a separate zone or building body. Windows and doors works best if they are planar. Each mesh will create a separate window or door.
-3. Select objects of one type with similar properties, for example zones. Supported objects are building bodies, zones, windows, doors and external (shading) objects.
-4. Select the corresponding object type in ICEBridge, path and press "Export to IDA ICE". This will generate a script file and optionaly geometry files in the selected folder path. Exporting the same object type twice will overwrite the script file and geometries with the same name.
+3. Select objects of one type with similar properties, for example zones. Supported objects are building bodies, zones, windows, doors, and external (shading) objects.
+4. Select the corresponding object type in ICEBridge, path and press "Export to IDA ICE". This will generate a script file and optionally geometry files in the selected folder path. Exporting the same object type twice will overwrite the script file and geometries with the same name.
 5. Open IDA ICE and run the generated script. The scripts can be run in any order but windows and doors need to have building bodies to be placed on.
 
 ## Limitations
@@ -33,17 +33,17 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 - 2022-11-03: Version 0.8.7 Possible to run scripts directly from Blender. This is only possible for scripts that creates OBJ-files.
 - 2022-11-01: Version 0.8.6 External shading objects can be imported without manual renaming.
-- 2022-10-31: Version 0.8.5 New window export function that uses temp zones and a custom script. This method deletes all exsisting zones and may create stray windows in corners depending on the bounding box of the window. The method ignores BIM-data.
+- 2022-10-31: Version 0.8.5 New window export function that uses temp zones and a custom script. This method deletes all existing zones and may create stray windows in corners depending on the bounding box of the window. The method ignores BIM-data.
 
 
 ## Notes
 
-- Windows and doors should have center of origin is the to center of mass (surface)
+- Windows and doors should have the center of origin as the to center of mass (surface)
 - Windows and doors import best if the rotation is not transformed.
 - The import can be quite slow, therefore it can be a good idea to export/import larger buildings in parts, for example each floor.
 - It is faster to import zones and building bodies without geometries.
 - Importing without geometry will make zones non editable in IDA ICE and building bodies are more often non editable.
-- Coplanar surfaces will not be merged automaticly if import without geometry is used.
+- Coplanar surfaces will not be merged automatically if import without geometry is used.
 - Building bodies can be created in Revit by deleting room bounding walls, floors and ceilings.
 - Spaces can be created from any closed volume, for example Revit rooms or spaces or IFCSpaces.
 - Building bodies and zones should if possible be created as objects that can be created in IDA ICE to be editable.
