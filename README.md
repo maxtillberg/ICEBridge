@@ -31,6 +31,7 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 ## News
 
+- 2022-01-16: Version 0.8.9 Same geo-referencing in the exported scripts from BlenderBIM as the BIM-import in IDA ICE.
 - 2022-12-21: Version 0.8.8 Faster external scripts, bug fixes.
 - 2022-11-03: Version 0.8.7 Possible to run scripts directly from Blender. This is only possible for scripts that creates OBJ-files.
 - 2022-11-01: Version 0.8.6 External shading objects can be imported without manual renaming.
