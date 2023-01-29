@@ -31,6 +31,7 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 ## News
 
+- 2023-01-29: Version 0.9.0 Custom Names can be created for all objects, Removed clear temp folder button, Script for moving windows between building bodies and zones, Script for creating big bounding box in IDA ICE, Allways group external objects and allways create obj-fies, Fill external walls with windows, Note that they can not be named automaticly, Script to delete zones with optionally given name, Script to delete building bodies with optionally given name, New operations for making objects non selectble/selectable, Hide/show imported objects by scale with optionally given name, Single bounding box aligned with last selected bject
 - 2023-01-16: Version 0.8.9 Same geo-referencing in the exported scripts from BlenderBIM as the BIM-import in IDA ICE.
 - 2022-12-21: Version 0.8.8 Faster external scripts, bug fixes.
 - 2022-11-03: Version 0.8.7 Possible to run scripts directly from Blender. This is only possible for scripts that creates OBJ-files.
