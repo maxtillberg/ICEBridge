@@ -1,12 +1,12 @@
 # ICEBridge
 
-Blender plugin to send BIM data to [IDA ICE](https://www.equa.se/en/ida-ice).
+Blender plugin to send BIM-data like IFC to [IDA ICE](https://www.equa.se/en/ida-ice).
 
 ![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.png)
 
 ## Requirements
 
-To run this plugin you need [Blender](https://www.blender.org/) and [BlenderBIM](https://blenderbim.org/). I recomend to install [Speckle](https://speckle.systems/) and [dotBIM](https://dotbim.net/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need [IDA ICE](https://www.equa.se/en/ida-ice).
+To run this plugin, you need [Blender](https://www.blender.org/) and [BlenderBIM](https://blenderbim.org/). I recommend installing [Speckle](https://speckle.systems/) and [dotBIM](https://dotbim.net/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need [IDA ICE](https://www.equa.se/en/ida-ice).
 
 ## Installation
 
@@ -17,7 +17,7 @@ Download ICEBridge.zip and install as a normal Blender plugin. Instructions can 
 ### IDA ICE 4.8
 
 To run some of the ICEBridge scripts you need to install a few custom patches and a plugin in IDA ICE.
-- IDA NKS Extension v0.3. This can be downloaded [here](https://files.equa.se/courses/ice-nks-03.exe). Run the file to install. Make sure to select the correct installation of IDA ICE you want to install it to. 
+- IDA NKS Extension v0.3. This can be downloaded [here](https://files.equa.se/courses/ice-nks-03.exe). Run the file to install it. Make sure to select the correct installation of IDA ICE you want to install it to. 
 - Patches that can be downloaded [here](https://files.equa.se/courses/ice_patches.zip).
 Extract the patches and place them in the ice.patches folder. This should be located at ida\lib\ice\ice.patches\ where "ida" is the IDA ICE installation folder, probably “IDA48” or something similar. Create the folder ice.patches If this does not exist. Restart IDA ICE after the files is installed. Due to security settings in Windows, you 
 might extract the files in a separate folder and move them manually.
@@ -44,12 +44,11 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 ## News
   
-- 2023-01-29: Version 0.9.0 Custom Names can be created for all objects, Removed clear temp folder button, Script for moving windows between building bodies and zones, Script for creating big bounding box in IDA ICE, Allways group external objects and allways create obj-fies, Fill external walls with windows, Note that they can not be named automaticly, Script to delete zones with optionally given name, Script to delete building bodies with optionally given name, New operations for making objects non selectble/selectable, Hide/show imported objects by scale with optionally given name, Single bounding box aligned with last selected bject
-- 2023-01-16: Version 0.8.9 Same geo-referencing in the exported scripts from BlenderBIM as the BIM-import in IDA ICE.
+- 2023-01-29: Version 0.9.0 Custom Names can be created for all objects, Removed clear temp folder button, Script for moving windows between building bodies and zones, Script for creating big bounding box in IDA ICE, Always group external objects and always create obj-files, Fill external walls with windows, Note that they cannot be named automatically, Script to delete zones with optionally given name, Script to delete building bodies with optionally given name, New operations for making objects non selectable/selectable, Hide/show imported objects by scale with optionally given name, Single bounding box aligned with last selected object
 - 2022-12-21: Version 0.8.8 Faster external scripts, bug fixes.
 - 2022-11-03: Version 0.8.7 Possible to run scripts directly from Blender. This is only possible for scripts that creates OBJ-files.
 - 2022-11-01: Version 0.8.6 External shading objects can be imported without manual renaming.
-- 2022-10-31: Version 0.8.5 New window export function that uses temp zones and a custom script. This method deletes all exsisting zones and may create stray windows in corners depending on the bounding box of the window. The method ignores BIM-data.
+- 2022-10-31: Version 0.8.5 New window export function that uses temp zones and a custom script. This method deletes all existing  zones and may create stray windows in corners depending on the bounding box of the window. The method ignores BIM-data.
 
 
 ## Notes
@@ -59,7 +58,7 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 - The import can be quite slow, therefore it can be a good idea to export/import larger buildings in parts, for example each floor.
 - It is faster to import zones and building bodies without geometries.
 - Importing without geometry will make zones non editable in IDA ICE and building bodies are more often non editable.
-- Coplanar surfaces will not be merged automaticly if import without geometry is used.
+- Coplanar surfaces will not be merged automatically  if import without geometry is used.
 - Building bodies can be created in Revit by deleting room bounding walls, floors and ceilings.
 - Spaces can be created from any closed volume, for example Revit rooms or spaces or IFCSpaces.
 - Building bodies and zones should if possible be created as objects that can be created in IDA ICE to be editable.
