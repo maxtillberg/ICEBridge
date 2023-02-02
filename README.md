@@ -1,8 +1,8 @@
 # ICEBridge
 
-Blender plugin to send BIM-data like IFC to [IDA ICE](https://www.equa.se/en/ida-ice).
+![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/icebridge.png)
 
-![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.png)
+Blender plugin to send BIM-data like IFC to [IDA ICE](https://www.equa.se/en/ida-ice).
 
 ## Requirements
 
@@ -23,6 +23,8 @@ Extract the patches and place them in the ice.patches folder. This should be loc
 might extract the files in a separate folder and move them manually.
 
 Note that these files are not a part of ICEBridge.
+
+![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.png)
 
 ## Usage
   
