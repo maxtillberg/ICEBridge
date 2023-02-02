@@ -2,17 +2,21 @@
 
 ![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/icebridge.png)
 
-Blender plugin to send BIM-data like IFC to [IDA ICE](https://www.equa.se/en/ida-ice).
+[Blender](https://www.blender.org/) or [grasshopper](https://www.grasshopper3d.com/) plugin to send BIM-data like IFC to [IDA ICE](https://www.equa.se/en/ida-ice).
 
 ## Requirements
 
-To run this plugin, you need [Blender](https://www.blender.org/) and [BlenderBIM](https://blenderbim.org/). I recommend installing [Speckle](https://speckle.systems/) and [dotBIM](https://dotbim.net/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need [IDA ICE](https://www.equa.se/en/ida-ice).
+To run this plugin, you need [Blender](https://www.blender.org/) and [BlenderBIM](https://blenderbim.org/) or [Rhino](https://www.rhino3d.com/). I recommend installing [Speckle](https://speckle.systems/) and [dotBIM](https://dotbim.net/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need [IDA ICE](https://www.equa.se/en/ida-ice).
 
 ## Installation
 
 ### Blender
 
 Download [ICEBridge.zip](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.zip) and install as a normal Blender plugin. Instructions can be found [here](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
+
+### Rhino/grasshopper
+
+This is still under development and will be delivered by request.
 
 ### IDA ICE 4.8
 
