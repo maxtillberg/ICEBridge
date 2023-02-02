@@ -12,7 +12,7 @@ To run this plugin, you need [Blender](https://www.blender.org/) and [BlenderBIM
 
 ### Blender
 
-Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found [here](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
+Download [ICEBridge.zip](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.zip) and install as a normal Blender plugin. Instructions can be found [here](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
 
 ### IDA ICE 4.8
 
