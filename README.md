@@ -1,6 +1,6 @@
 # ICEBridge
 
-Blender plugin to send BIM data to [IDA ICE]([https://files.equa.se/courses/ice_patches.zip](https://www.equa.se/en/ida-ice).
+Blender plugin to send BIM data to [IDA ICE](https://www.equa.se/en/ida-ice).
 
 ![This is an image](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.png)
 
@@ -12,7 +12,7 @@ To run this plugin you need [Blender](https://www.blender.org/) and [BlenderBIM]
 
 ### Blender
 
-Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found [here]https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
+Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found [here](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
 
 ### IDA ICE 4.8
 
