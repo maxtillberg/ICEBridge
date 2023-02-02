@@ -19,7 +19,7 @@ Download ICEBridge.zip and install as a normal Blender plugin. Instructions can 
 To run some of the ICEBridge scripts you need to install a few custom patches and a plugin in IDA ICE.
 - IDA NKS Extension v0.3. This can be downloaded [here](https://files.equa.se/courses/ice-nks-03.exe). Run the file to install. Make sure to select the correct installation of IDA ICE you want to install it to. 
 - Patches that can be downloaded [here](https://files.equa.se/courses/ice_patches.zip).
-Extract the patches and place them in the ice.patches folder. This should be located at <ida>\lib\ice\ice.patches\ (<ida> is the installation folder, probably “IDA48” or something similar). Create the folder ice.patches If this does not exist. Restart IDA ICE after the files is installed. Due to security settings in Windows, you 
+Extract the patches and place them in the ice.patches folder. This should be located at ida\lib\ice\ice.patches\ where "ida" is the IDA ICE installation folder, probably “IDA48” or something similar. Create the folder ice.patches If this does not exist. Restart IDA ICE after the files is installed. Due to security settings in Windows, you 
 might extract the files in a separate folder and move them manually.
 Note that these files are not a part of ICEBridge.
 
