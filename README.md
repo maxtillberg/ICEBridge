@@ -9,10 +9,10 @@ Blender plugin to send BIM data to IDA ICE
 To run this plugin you need Blender (https://www.blender.org/) and BlenderBIM (https://blenderbim.org/). I recomend to install and Speckle (https://speckle.systems/) as well. It also helps if you have access to Revit and/or ArchiCAD, at least demo versions. To import the data you need IDA ICE (https://www.equa.se/en/ida-ice).
 
 ## Installation
-Blender
+* Blender
 Download ICEBridge.zip and install as a normal Blender plugin. Instructions can be found here https://docs.blender.org/manual/en/latest/editors/preferences/addons.html
 
-IDA ICE 4.8
+* IDA ICE 4.8
 To run some of the ICEBridge scripts you need to install a few custom patches and a plugin in IDA ICE.
 - IDA NKS Extension v0.3. This can be downloaded [here](https://files.equa.se/courses/ice-nks-03.exe). Run the file to install. Make sure to select the correct installation of IDA ICE you want to install it to. 
 - Patches that can be downloaded [here](https://files.equa.se/courses/ice_patches.zip).
