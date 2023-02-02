@@ -35,9 +35,6 @@ Note that these files are not a part of ICEBridge.
 ## Limitations
   
 This is a proof of concept, not an official product by Equa. There will be bugs and limitations.
-- Windows and doors will be rectangular.
-- Windows and doors can only be placed in building bodies. Windows can be moved to zones manually.
-- Windows and doors must not overlap building bodies. If they are larger, you need to divide them or merge the building bodies.
 
 ## Input
 
@@ -54,9 +51,9 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 ## Notes
   
-- Windows and doors should have center of origin is the to center of mass (surface)
+- Windows and doors created using the NKS-plugin should have center of origin set to the geometrical center of the object.
 - Windows and doors import best if the rotation is not transformed.
-- The import can be quite slow, therefore it can be a good idea to export/import larger buildings in parts, for example each floor.
+- The 3D import can be quite slow, therefore it can be a good idea to export/import larger buildings in parts, for example each floor.
 - It is faster to import zones and building bodies without geometries.
 - Importing without geometry will make zones non editable in IDA ICE and building bodies are more often non editable.
 - Coplanar surfaces will not be merged automatically  if import without geometry is used.
@@ -64,6 +61,5 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 - Spaces can be created from any closed volume, for example Revit rooms or spaces or IFCSpaces.
 - Building bodies and zones should if possible be created as objects that can be created in IDA ICE to be editable.
 - Building bodies can be edited in IDA ICE if needed.
-- External objects with similar properties can be merged into one mesh to avoid too many objects.
+- External objects with similar properties are merged into one mesh to avoid too many objects.
 - Do not import too large shading external objects since this will affect shading calculations. Try to simplify external objects if possible.
-
