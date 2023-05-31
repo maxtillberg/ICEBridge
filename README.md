@@ -48,6 +48,7 @@ ICEBridge works well with BlenderBIM and Speckle but any valid geometry will wor
 
 ## News
 
+- 2023-05-31: Version 0.9.2 Export as 3DS. This requires separate plugin since Blender >2.8 and < 4.0 does not support 3DS export. This plugin can be downloaded [here](https://github.com/maxtillberg/ICEBridge/blob/main/io_scene_3ds.zip), Align object acccording to selected surface, Make objects selectable/non selectable.
 - 2023-02-08: Version 0.9.1 Bug fixes.
 - 2023-01-29: Version 0.9.0 Custom Names can be created for all objects, Removed clear temp folder button, Script for moving windows between building bodies and zones, Script for creating big bounding box in IDA ICE, Always group external objects and always create obj-files, Fill external walls with windows, Note that they cannot be named automatically, Script to delete zones with optionally given name, Script to delete building bodies with optionally given name, New operations for making objects non selectable/selectable, Hide/show imported objects by scale with optionally given name, Single bounding box aligned with last selected object
 - 2022-12-21: Version 0.8.8 Faster external scripts, bug fixes.
