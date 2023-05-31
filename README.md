@@ -12,7 +12,7 @@ To run this plugin, you need [Blender](https://www.blender.org/) and [BlenderBIM
 
 ### Blender
 
-Download and install [ICEBridge.zip](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.zip) and [ICEBridge.zip]([https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.zip](https://github.com/maxtillberg/ICEBridge/blob/main/io_scene_3ds.zip)) as a normal Blender plugins. Instructions can be found [here](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
+Download and install [ICEBridge.zip](https://github.com/maxtillberg/ICEBridge/blob/main/ICEBridge.zip) and [ICEBridge.zip]](https://github.com/maxtillberg/ICEBridge/blob/main/io_scene_3ds.zip) as a normal Blender plugins. Instructions can be found [here](https://docs.blender.org/manual/en/latest/editors/preferences/addons.html)
 
 ### Rhino/grasshopper
 
